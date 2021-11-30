@@ -5,7 +5,7 @@ import "./NavBar.css";
 
 const NavBar = () => {
     return(
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="dark" expand="lg" variant="dark">
             <Container>
                 <Navbar.Brand href="#home">React</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
