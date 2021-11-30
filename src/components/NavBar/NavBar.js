@@ -1,7 +1,9 @@
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faShoppingCart} from "@fortawesome/free-solid-svg-icons";
+import Navbar from "react-bootstrap/NavBar";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import "./NavBar.css";
+import ShoppingCart from "./ShoppingCart";
 
 const NavBar = () => {
     return(
@@ -20,7 +22,7 @@ const NavBar = () => {
                             <NavDropdown.Item href="#action/3.4">Todos</NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link href="#contact">Contacto</Nav.Link>
-                        <Nav.Link href="#cart" className="cart"><FontAwesomeIcon icon={faShoppingCart}/></Nav.Link>
+                        <Nav.Link href="#cart" className="cart"><ShoppingCart /></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
