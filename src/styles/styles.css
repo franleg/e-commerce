@@ -1,0 +1,42 @@
+.nav-container {
+    margin: 0px;
+    padding: 0px;
+}
+
+.row {
+    width: 1366px;
+    margin: 0px;
+}
+
+.col-lg-12 {
+    padding: 0px;
+}
+
+.container {
+    max-width: 1366px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.me-auto {
+    margin-right: 0px !important;
+}
+
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar-brand {
+    margin-right: 0px;
+    padding-left: 20px;
+}
+
+.nav-link {
+    padding-right: 30px !important;
+}
