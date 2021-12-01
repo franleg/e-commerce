@@ -14,10 +14,10 @@ const NavBar = () => {
                 <Navbar.Collapse className="nav" id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="#home">Inicio</Nav.Link>
-                        <NavDropdown title="Servicios" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Servicio 1</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Servicio 2</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Servicio 3</NavDropdown.Item>
+                        <NavDropdown title="Productos" id="basic-nav-dropdown">
+                            <NavDropdown.Item href="#action/3.1">Producto 1</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.2">Producto 2</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3">Producto 3</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.4">Todos</NavDropdown.Item>
                         </NavDropdown>
