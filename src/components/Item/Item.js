@@ -9,9 +9,9 @@ function Item( {inicial, stock, prod} ) {
             key={prod.id}
             className="card-container">
                 <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={Auris} />
+                    <Card.Img variant="top" sr={`${productos.img}`} />
                     <Card.Body>
-                        <Card.Title>{`${producto.nombre} - ${producto.categoria}`}</Card.Title>
+                        <Card.Title>{`${productos.nombre} - ${productos.categoria}`}</Card.Title>
                         <hr/>
                         <ItemCount inicial={inicial} stock={stock} />
                         <Button variant="primary">Agregar al carrito</Button>
