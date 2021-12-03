@@ -3,7 +3,7 @@ import "./ItemCount.css";
 
 const ItemCount = ( {inicial, stock} ) => {
 
-    const { counter, increment, decrement} = useCounter (inicial, stock)
+    const {counter, increment, decrement} = useCounter (inicial, stock)
 
     return (
         <div>

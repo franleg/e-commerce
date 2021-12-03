@@ -1,7 +1,5 @@
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import ItemCount from "../ItemCount/ItemCount.js";
-import Auris from "../../assets/Auris.jpg";
+import {useState, useEffect} from "react";
+import {getFetch} from "../../helpers/getFetch.js";
 import "./ItemListContainer.css";
 
 function ItemListContainer () {
@@ -9,18 +7,23 @@ function ItemListContainer () {
     const inicial = 1
     const stock = 15
 
+    const [productos, setProductos] = useState ([])
+    const [loading, setLoading] = useState (true)
+
+    useEffect(()=>{
+        getFetch
+        .then(resp => setProductos(resp))
+        .catch(err => console.log (err))
+        .finally(()=>setLoading(false))
+    })
+
     return (
-        <div className="card-container">
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={Auris} />
-                <Card.Body>
-                    <Card.Title>Producto 1</Card.Title>
-                    <hr/>
-                    <Card.Text>Este es el producto 1</Card.Text>
-                    <ItemCount inicial={inicial} stock={stock} />
-                    <Button variant="primary">Agregar al carrito</Button>
-                </Card.Body>
-            </Card>
+        <div>
+            { loading ? 
+                <h2>Cargando..</h2>
+                :
+                <ItemList inicial={inicial} stock={stock} productos={productos}/>
+            } 
         </div>
     )
 }
