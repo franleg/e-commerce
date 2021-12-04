@@ -21,7 +21,7 @@ function ItemListContainer () {
 
     return (
         <div className="container-fluid">
-            <div className="row">
+            <div className="row div-container">
                 { loading ?
                     <div className="spinner-container">
                         <div className="spinner-div">

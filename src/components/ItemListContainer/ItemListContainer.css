@@ -25,3 +25,13 @@
     top: 50%;
     left: 50%;
 }
+
+
+.div-container {
+    width: 1349px;
+    padding: 30px;
+}
+
+.card {
+    margin: 10px;
+}

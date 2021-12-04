@@ -8,7 +8,7 @@ function Item( {inicial, stock, prod} ) {
     return (
         <div
             key={prod.id}
-            className="card-container col-lg-4 col-xs-12">
+            className="card-container col-lg-3 col-xs-12">
                 <Card style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={prod.imagen} />
                     <Card.Body>
