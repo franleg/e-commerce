@@ -4,5 +4,10 @@
 
 .btn-count {
     margin: 8px;
-    
+    color: #212529;
+    border-color: #212529 !important;
+}
+
+.btn-count:hover {
+    background-color: #212529 !important;
 }

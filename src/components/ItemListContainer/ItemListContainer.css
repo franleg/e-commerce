@@ -13,3 +13,15 @@
 .card {
     text-align: center;
 }
+
+.spinner-container {
+    height: 100vh;
+    position: relative;
+}
+
+.spinner-div {
+    margin: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}

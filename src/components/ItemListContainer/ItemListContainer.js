@@ -22,10 +22,14 @@ function ItemListContainer () {
     return (
         <div className="container-fluid">
             <div className="row">
-                { loading ? 
-                    <Spinner animation="border" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                    </Spinner>
+                { loading ?
+                    <div className="spinner-container">
+                        <div className="spinner-div">
+                            <Spinner color="primary" animation="grow" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                            </Spinner>
+                        </div>
+                    </div>
                     :
                     <ItemList inicial={inicial} stock={stock} productos={productos}/>
                 } 
