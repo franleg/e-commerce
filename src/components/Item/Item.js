@@ -5,13 +5,13 @@ import ItemCount from "../ItemCount/ItemCount.js";
 
 function Item( {inicial, stock, prod} ) {
     return (
-        <div 
+        <div
             key={prod.id}
-            className="card-container">
+            className="card-container col-lg-4 col-xs-12">
                 <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" sr={`${productos.img}`} />
+                    <Card.Img variant="top" sr={`${prod.img}`} />
                     <Card.Body>
-                        <Card.Title>{`${productos.nombre} - ${productos.categoria}`}</Card.Title>
+                        <Card.Title>{`${prod.marca} - ${prod.modelo}`}</Card.Title>
                         <hr/>
                         <ItemCount inicial={inicial} stock={stock} />
                         <Button variant="primary">Agregar al carrito</Button>

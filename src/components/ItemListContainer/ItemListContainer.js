@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import {getFetch} from "../../helpers/getFetch.js";
+import { Spinner } from "react-bootstrap";
 import "./ItemListContainer.css";
 import ItemList from "../ItemList/ItemList.js"
 
@@ -19,12 +20,16 @@ function ItemListContainer () {
     })
 
     return (
-        <div>
-            { loading ? 
-                <h2>Cargando..</h2>
-                :
-                <ItemList inicial={inicial} stock={stock} productos={productos}/>
-            } 
+        <div className="container-fluid">
+            <div className="row">
+                { loading ? 
+                    <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                    </Spinner>
+                    :
+                    <ItemList inicial={inicial} stock={stock} productos={productos}/>
+                } 
+            </div>
         </div>
     )
 }
