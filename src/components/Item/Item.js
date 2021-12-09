@@ -1,7 +1,6 @@
 import React from 'react'
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import ItemCount from "../ItemCount/ItemCount.js";
 import "./Item.css";
 
 function Item( {inicial, stock, prod} ) {
@@ -14,8 +13,8 @@ function Item( {inicial, stock, prod} ) {
                     <Card.Body>
                         <Card.Title>{`${prod.marca} - ${prod.modelo}`}</Card.Title>
                         <hr/>
-                        <ItemCount inicial={inicial} stock={stock} />
-                        <Button className="btn-carrito" variant="primary">Agregar al carrito</Button>
+                        <Card.Title>{`Precio: $${prod.precio}`}</Card.Title>
+                        <Button className="btn-carrito" variant="primary">Ver Detalle</Button>
                     </Card.Body>
                 </Card>
         </div>
