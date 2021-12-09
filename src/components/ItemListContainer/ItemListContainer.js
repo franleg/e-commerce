@@ -5,18 +5,14 @@ import "./ItemListContainer.css";
 import ItemList from "../ItemList/ItemList.js"
 
 function ItemListContainer () {
-
-    const inicial = 1
-    const stock = 15
-
     const [productos, setProductos] = useState ([])
     const [loading, setLoading] = useState (true)
 
     useEffect(()=>{
         getFetch
-        .then(resp => setProductos(resp))
-        .catch(err => console.log (err))
-        .finally(()=>setLoading(false))
+        .then((resp)=> setProductos(resp))
+        .catch((err)=> console.log (err))
+        .finally(()=> setLoading(false))
     })
 
     return (
@@ -31,7 +27,7 @@ function ItemListContainer () {
                         </div>
                     </div>
                     :
-                    <ItemList inicial={inicial} stock={stock} productos={productos}/>
+                    <ItemList productos={productos}/>
                 } 
             </div>
         </div>
