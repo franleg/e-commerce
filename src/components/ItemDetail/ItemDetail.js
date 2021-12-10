@@ -12,7 +12,7 @@ const itemDetail = ({inicial, stock, producto}) => {
                     <Card.Body>
                         <Card.Title>{`${producto.marca} - ${producto.modelo}`}</Card.Title>
                         <hr/>
-                        <Card.Text>{`${producto.precio}`}</Card.Text>
+                        <Card.Text>{`$${producto.precio}`}</Card.Text>
                         <ItemCount inicial={inicial} stock={stock} />
                         <Button className="btn-carrito" variant="primary">Agregar al carrito</Button>
                     </Card.Body>

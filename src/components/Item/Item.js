@@ -13,7 +13,7 @@ function Item( {inicial, stock, prod} ) {
                     <Card.Body>
                         <Card.Title>{`${prod.marca} - ${prod.modelo}`}</Card.Title>
                         <hr/>
-                        <Card.Title>{`Precio: $${prod.precio}`}</Card.Title>
+                        <Card.Text>{`Precio: $${prod.precio}`}</Card.Text>
                         <Button className="btn-carrito" variant="primary">Ver Detalle</Button>
                     </Card.Body>
                 </Card>

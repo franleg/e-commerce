@@ -1,6 +1,7 @@
 import { useCounter } from "../../hooks/useCounter";
 import "./ItemCount.css";
 
+
 const ItemCount = ( {inicial, stock} ) => {
 
     const {counter, increment, decrement} = useCounter (inicial, stock)
