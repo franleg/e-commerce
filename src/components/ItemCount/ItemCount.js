@@ -8,10 +8,16 @@ const ItemCount = ( {inicial, stock} ) => {
 
     return (
         <div>
-            <h1 className="contador">Cantidad: {counter}</h1>
-            <buttom className="btn btn-outline-primary btn-count" onClick={decrement}>-</buttom>
-            <buttom className="btn btn-outline-primary btn-count" onClick={increment}>+</buttom>
+            <h1 className="contador">Cantidad</h1>
+            <div class="contenedor-cantidad d-flex justify-content-center align-items-center">
+                <div class="contenedor-restar" onClick={decrement}>-</div>
+                <div class="cantidad">{counter}</div>
+                <div class="contenedor-sumar" onClick={increment}>+</div>
+            </div>
         </div>
+
+
+
     )
 }
 

@@ -1,0 +1,59 @@
+.detail-container {
+    padding: 70px;
+    font-family: Poppins;
+}
+
+.img-container {
+    width: 200%
+}
+
+.btn-carrito {
+    text-align: center;
+    margin-top: 14px;
+    background-color: #212529;
+    border-color: #212529;
+}
+
+.btn-carrito:hover {
+    background-color: #fff;
+    color: #212529;
+    border-color: #212529;
+}
+
+hr {
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #7f7f7f;
+}
+
+h4 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #5f5f5f;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #6f6f6f;
+    margin-bottom: 20px;
+}
+
+.precio-efectivo{
+    color: green;
+}

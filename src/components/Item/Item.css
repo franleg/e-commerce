@@ -1,11 +1,33 @@
-.btn-carrito {
-    margin-top: 10px;
+.card-container {
+    font-family: Poppins;
+}
+
+.precio {
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #7f7f7f;
+
+}
+
+.btn-detalle {
+    margin-top: 8px;
     background-color: #212529;
     border-color: #212529;
 }
 
-.btn-carrito:hover {
+.btn-detalle:hover {
     background-color: #fff;
     color: #212529;
     border-color: #212529;
+}
+
+.contenedor-stock {
+    margin-top: 30px;
+    margin-bottom: 0px !important;
+}
+
+h5 {
+    font-size: 12px;
+    color: #7f7f7f;
 }

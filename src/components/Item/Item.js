@@ -1,9 +1,10 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import "./Item.css";
 
-function Item( {inicial, stock, prod} ) {
+function Item( {prod} ) {
     return (
         <div
             key={prod.id}
@@ -13,8 +14,13 @@ function Item( {inicial, stock, prod} ) {
                     <Card.Body>
                         <Card.Title>{`${prod.marca} - ${prod.modelo}`}</Card.Title>
                         <hr/>
-                        <Card.Text>{`Precio: $${prod.precio}`}</Card.Text>
-                        <Button className="btn-carrito" variant="primary">Ver Detalle</Button>
+                        <Card.Text className="precio">{`$${prod.precioTarjeta}`}</Card.Text>
+                        <Link to={`/detalle/${prod.id}`}>
+                            <Button className="btn-detalle" variant="primary">Ver Detalle</Button>
+                        </Link>
+                        <div className="contenedor-stock">
+                            <h5>Stock Disponible: {prod.stock}</h5>
+                        </div>
                     </Card.Body>
                 </Card>
         </div>
