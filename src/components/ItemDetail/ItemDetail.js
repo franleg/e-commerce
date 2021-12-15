@@ -1,9 +1,19 @@
 import ItemCount from "../ItemCount/ItemCount.js";
+import {Link} from "react-router-dom";
+import {useState,} from "react";
 import React from 'react'
-import Button from "react-bootstrap/Button";
 import "./ItemDetail.css";
+import Button from "react-bootstrap/Button";
 
-const itemDetail = ({inicial, stock, producto}) => {
+const ItemDetail = ({inicial, stock, producto}) => {
+
+    const [goCart, setGoCart] = useState(false);
+
+    const onAdd = (cantidad) => {
+        console.log(cantidad);
+        setGoCart (true)
+    }
+
     return (
         <div className="container-fluid">
             <div className="row">
@@ -22,29 +32,16 @@ const itemDetail = ({inicial, stock, producto}) => {
                         <h4 className="precio-efectivo">{`$${producto.precioEfectivo}`}</h4>
                         <h2>{`${producto.categoria}`}</h2>
                         <p className="description-container">{`${producto.descripcion}`}</p>
-                        <ItemCount inicial={inicial} stock={stock} />
-                        <Button className="btn-carrito" variant="primary">Agregar al carrito</Button>
+                        {!goCart ? 
+                            <ItemCount inicial={inicial} stock={stock} onAdd={onAdd}/>
+                            :
+                            <Link to="/cart"><Button className="btn-carrito" variant="primary">Ir al carrito</Button></Link>}
+                        
                     </div>
                 </div>
             </div>
         </div>
-
-        /*
-        <div
-            className="card-container col-lg-3 col-xs-12">
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={producto.imagen} />
-                    <Card.Body>
-                        <Card.Title>{`${producto.marca} - ${producto.modelo}`}</Card.Title>
-                        <hr/>
-                        <Card.Text>{`$${producto.precio}`}</Card.Text>
-                        <ItemCount inicial={inicial} stock={stock} />
-                        <Button className="btn-carrito" variant="primary">Agregar al carrito</Button>
-                    </Card.Body>
-                </Card>
-        </div>
-        */
     )
 }
 
-export default itemDetail;
+export default ItemDetail;

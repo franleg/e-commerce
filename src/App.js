@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer.js";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer.js"
+import Cart from "./components/Cart/Cart.js"
 
 function App() {
   return (
@@ -25,6 +26,11 @@ function App() {
             path="/detalle/:idProducto"
             element={<ItemDetailContainer/>}
           />
+          <Route
+            exact
+            path="/cart"
+            element={<Cart/>}
+          />  
         </Routes>
       </div>
     </BrowserRouter>

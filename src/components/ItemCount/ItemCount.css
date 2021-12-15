@@ -13,6 +13,19 @@
     background-color: #212529 !important;
 }
 
+.btn-carrito {
+    text-align: center;
+    margin-top: 14px;
+    background-color: #212529;
+    border-color: #212529;
+}
+
+.btn-carrito:hover {
+    background-color: #fff;
+    color: #212529;
+    border-color: #212529;
+}
+
 .contenedor-cantidad {
 	border: solid 1px #d4d2d2;
 	width: 32%;

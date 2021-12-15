@@ -7,19 +7,6 @@
     width: 200%
 }
 
-.btn-carrito {
-    text-align: center;
-    margin-top: 14px;
-    background-color: #212529;
-    border-color: #212529;
-}
-
-.btn-carrito:hover {
-    background-color: #fff;
-    color: #212529;
-    border-color: #212529;
-}
-
 hr {
     margin-bottom: 30px;
 }
