@@ -1,0 +1,123 @@
+.table {
+    width: 80%;
+    text-align: center;
+    margin-top: 100px;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.0);
+    vertical-align: baseline !important;
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.0);
+    font-family: Poppins;
+}
+
+th {
+    color: #9b9d97;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: #212529 !important;
+}
+
+tbody {
+    border-top: 1.8px solid #dee2e6 !important;
+}
+
+.th-cart {
+    width: 8%;
+    border-right: none !important;
+}
+
+.th-img {
+    width: 8%;
+    border-right: none;
+    border-left: none;
+}
+
+.th-prod {
+    border-left: none;
+    text-align: left;
+    padding-left: 30px !important;
+}
+
+td {
+    padding-bottom: 5px !important; 
+    padding-top: 5px !important;
+}
+
+.td-cart {
+    border-right: none;
+    padding-right: 20px !important;
+    padding-left: 0px !important;
+    font-size: 16px;
+}
+
+.td-img {
+    width: 10%;
+    border-right: none;
+    border-left: none;
+}
+
+.td-prod {
+    border-left: none;
+    text-align: left;
+    padding-left: 30px !important;
+    color: #3f3f3f !important;
+    font-weight: 700;
+}
+
+.td-price{
+    color: #6f6f6f !important;
+    font-weight: 600;
+}
+
+.td-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 75px;
+}
+
+.cant-container {
+    display: inline;
+    margin-right: 10px;
+}
+
+.arrow-container {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.up {
+    display: block;
+    cursor: pointer;
+}
+
+.down {
+    display: block;
+    cursor: pointer;
+}
+
+.btn-vaciarCarrito {
+    color: #212529;
+    text-align: center;
+    margin-top: 14px;
+    background-color: #fff;
+    border-color: #6f6f6f;
+    border-radius: 0px;
+    border-width: 1px;
+    padding: 8px;
+    position: relative;
+    left: 1042px;
+    width: 186px;
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.btn-vaciarCarrito:hover {
+    background-color: #212529;
+    color: #9b9d97;
+    border-color: #212529;
+}
+
+.icono-vaciar {
+    cursor: pointer;
+}

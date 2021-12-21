@@ -1,19 +1,22 @@
 import ItemCount from "../ItemCount/ItemCount.js";
 import {Link} from "react-router-dom";
-import {useState,} from "react";
-import React from 'react'
+import {useState} from "react";
 import "./ItemDetail.css";
 import Button from "react-bootstrap/Button";
+import {useCartContext} from "../../context/CartContext"
 
 const ItemDetail = ({inicial, stock, producto}) => {
 
     const [goCart, setGoCart] = useState(false);
 
+    const {cartList, agregarAlCarrito} = useCartContext()
+
     const onAdd = (cantidad) => {
         console.log(cantidad);
         setGoCart (true)
+        agregarAlCarrito ({...producto, cantidad:cantidad})
     }
-
+    console.log (cartList);
     return (
         <div className="container-fluid">
             <div className="row">
