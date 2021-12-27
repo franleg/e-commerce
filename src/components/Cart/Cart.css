@@ -1,22 +1,28 @@
-.table {
+.contenedor-carrito{
+    overflow-x: hidden;
+}
+
+.tabla-carrito {
     width: 80%;
     text-align: center;
     margin-top: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     --bs-table-striped-bg: rgba(0, 0, 0, 0.0);
     vertical-align: baseline !important;
     --bs-table-hover-bg: rgba(0, 0, 0, 0.0);
     font-family: Poppins;
 }
 
-th {
+thead {
     color: #9b9d97;
     font-weight: 400;
     font-size: 16px;
     background-color: #212529 !important;
 }
 
-tbody {
-    border-top: 1.8px solid #dee2e6 !important;
+th {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
 }
 
 .th-cart {
@@ -37,8 +43,8 @@ tbody {
 }
 
 td {
-    padding-bottom: 5px !important; 
-    padding-top: 5px !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
 }
 
 .td-cart {
@@ -96,16 +102,17 @@ td {
 }
 
 .btn-vaciarCarrito {
-    color: #212529;
+    color: #9b9d97;
     text-align: center;
     margin-top: 14px;
-    background-color: #fff;
-    border-color: #6f6f6f;
+    transition: all 0,6s ease;
+    background-color: #212529;
+    border-color: #212529;
     border-radius: 0px;
     border-width: 1px;
-    padding: 8px;
     position: relative;
-    left: 1042px;
+    left: 20px;
+    padding: 8px;
     width: 186px;
     margin-top: 40px;
     font-size: 18px;
@@ -114,10 +121,102 @@ td {
 
 .btn-vaciarCarrito:hover {
     background-color: #212529;
+    color: #fff;
+    border-color: #212529;
+}
+
+.btn-seguirComprando {
     color: #9b9d97;
+    text-align: center;
+    margin-top: 14px;
+    transition: all 0,6s ease;
+    background-color: #212529;
+    border-color: #212529;
+    border-radius: 0px;
+    border-width: 1px;
+    position: relative;
+    right: 20px;
+    padding: 8px;
+    width: 186px;
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.btn-seguirComprando:hover {
+    background-color: #212529;
+    color: #fff;
     border-color: #212529;
 }
 
 .icono-vaciar {
     cursor: pointer;
+}
+
+.icono-vaciar:hover {
+    font-size: 18px;
+    color: #9b9d97;
+}
+
+.texto-carrito {
+    margin-top: 100px;
+}
+
+.hr-carrito {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.btn-volver {
+    text-align: center;
+    margin-top: 14px;
+    transition: all 0,6s ease;
+    background-color: #212529;
+    border-color: #212529;
+    border-radius: 0px;
+    color: #9b9d97;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 8px;
+    width: 15%;
+}
+
+.btn-volver:hover {
+    background-color: #9b9d97;
+    color: #212529;
+    border-color: #9b9d97;
+}
+
+.titulo-total{
+    margin-top: 60px;
+    font-family: Poppins;
+}
+
+.tabla-total {
+    width: 32%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border: 1px solid #dee2e6 !important;
+    font-family: Poppins;
+}
+
+.btn-finalizarCompra {
+    margin-bottom: 30px;
+    background-color: #212529;
+
+    border-color: #212529;
+    border-radius: 0px;
+    color: #9b9d97;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 8px;
+    width: 32%;
+    transition: all 0,6s ease;
+}
+
+.btn-finalizarCompra:hover {
+    background-color: #212529;
+    color: #fff;
+    border-color: #212529;
 }

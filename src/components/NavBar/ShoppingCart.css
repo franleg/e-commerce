@@ -1,0 +1,11 @@
+.contador-carrito {
+    position: relative;
+    left: 4px;
+    bottom: 10px;
+    font-size: 14px;
+}
+
+.hidden {
+    visibility: hidden;
+    pointer-events: none;
+}

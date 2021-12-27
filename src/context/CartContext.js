@@ -19,12 +19,54 @@ function CartContextProvider({children}) {
         }
     }
 
+    function addQuantity(product) {
+        let productExist = cartList.find((item) => item.id === product.id);
+        setCartList (
+            cartList.map((item) => item.id === product.id 
+                ? {...productExist, cantidad: productExist.cantidad + 1}
+                : item
+            )
+        );
+    }
+
+    function subtractQuantity(product) {
+         let productExist = cartList.find((item) => item.id === product.id);
+         if (productExist.cantidad > 1) {
+            setCartList (
+                cartList.map((item) => item.id === product.id 
+                    ? {...productExist, cantidad: productExist.cantidad - 1}
+                    : item
+                    )
+            );
+        }
+    }
+
+    function removerDelCarrito(id) {
+        setCartList (cartList.filter(prod => prod.id !== id))
+    }
+
     function vaciarCarrito() {
         setCartList ([])
     }
 
+    function totalCantidad () {
+        return cartList.reduce((acc, prod) => acc + prod.cantidad, 0)
+    }
+
+    function totalCompra () {
+        return cartList.reduce ((acc, prod) => acc + prod.precioEfectivo * prod.cantidad, 0)
+    }
+
     return (
-        <CartContext.Provider value={{cartList, agregarAlCarrito, vaciarCarrito}}>
+        <CartContext.Provider value={{
+            cartList, 
+            agregarAlCarrito,
+            removerDelCarrito, 
+            vaciarCarrito,
+            totalCantidad,
+            totalCompra,
+            addQuantity,
+            subtractQuantity}}>
             {children}
         </CartContext.Provider>
     )

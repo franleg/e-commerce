@@ -20,6 +20,8 @@
     border-color: #212529;
     border-radius: 0px;
     color: #9b9d97;
+    width: 32%;
+    padding: 8px;
 }
 
 .btn-carrito:hover {

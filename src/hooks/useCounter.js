@@ -11,6 +11,7 @@ export const useCounter = (inicial, stock) => {
     const increment = () => {
         counter < stock && setCounter(prev => prev + 1)
     }
+    
     const decrement = () => {
         counter > inicial && setCounter(prev => prev - 1)
 

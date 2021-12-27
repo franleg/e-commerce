@@ -2,6 +2,16 @@
     font-family: Poppins;
 }
 
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 400ms ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+}
+
 .precio {
     margin-bottom: 10px;
     font-size: 17px;
@@ -19,9 +29,9 @@
 }
 
 .btn-detalle:hover {
-    background-color: #212529;
-    color: #fff;
-    border-color: #212529;
+    background-color: #9b9d97;
+    color: #212529;
+    border-color: #9b9d97;
 }
 
 .contenedor-stock {
