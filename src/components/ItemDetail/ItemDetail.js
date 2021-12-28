@@ -38,7 +38,7 @@ const ItemDetail = ({inicial, stock, producto}) => {
                         {!goCart ? 
                             <ItemCount inicial={inicial} stock={stock} onAdd={onAdd}/>
                             :
-                            <Link to="/cart"><Button className="btn-carrito" variant="primary">Ir al carrito</Button></Link>}
+                            <Link to="/cart"><Button className="btn-agregarCarrito" variant="primary">Ir al carrito</Button></Link>}
                         
                     </div>
                 </div>

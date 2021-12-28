@@ -13,7 +13,7 @@
     background-color: #212529 !important;
 }
 
-.btn-carrito {
+.btn-agregarCarrito {
     text-align: center;
     margin-top: 14px;
     background-color: #212529;
@@ -24,7 +24,7 @@
     padding: 8px;
 }
 
-.btn-carrito:hover {
+.btn-agregarCarrito:hover {
     background-color: #212529;
     color: #fff;
     border-color: #212529;

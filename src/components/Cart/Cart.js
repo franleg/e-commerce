@@ -22,10 +22,10 @@ const Cart = () => {
                                     <tr>
                                         <th className="th-cart"></th>
                                         <th className="th-img"></th>
-                                        <th className="th-prod">Producto</th>
-                                        <th>Precio</th>
-                                        <th>Cantidad</th>
-                                        <th>Subtotal</th>
+                                        <th className="th-prod">PRODUCTO</th>
+                                        <th>PRECIO</th>
+                                        <th>CANTIDAD</th>
+                                        <th>SUBTOTAL</th>
                                     </tr>
                                 </thead>
                                 <tbody>
