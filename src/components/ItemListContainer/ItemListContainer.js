@@ -3,7 +3,8 @@ import {useParams} from "react-router-dom"
 import {getFetch} from "../../helpers/getFetch.js";
 import { Spinner } from "react-bootstrap";
 import "./ItemListContainer.css";
-import ItemList from "../ItemList/ItemList.js"
+import ItemList from "../ItemList/ItemList.js";
+import { collection, getFirestore, getDocs, query, where } from "firebase/firestore"
 
 function ItemListContainer () {
     const [productos, setProductos] = useState ([])
@@ -11,19 +12,37 @@ function ItemListContainer () {
 
     const {ruta} = useParams();
 
-    useEffect(()=>{
+    // useEffect(()=>{
+    //     if (ruta) {
+    //         getFetch
+    //         .then((resp)=> setProductos(resp.filter(prod => prod.ruta === ruta)))
+    //         .catch((err)=> console.log (err))
+    //         .finally(()=> setLoading(false))            
+    //     } else {
+    //         getFetch
+    //         .then((resp)=> setProductos(resp))
+    //         .catch((err)=> console.log (err))
+    //         .finally(()=> setLoading(false))            
+    //     }
+    // }, [ruta])
+
+    useEffect(() => {
+        const dataBase = getFirestore()
         if (ruta) {
-            getFetch
-            .then((resp)=> setProductos(resp.filter(prod => prod.ruta === ruta)))
-            .catch((err)=> console.log (err))
-            .finally(()=> setLoading(false))            
+            const queryCollection = query(collection(dataBase, "items"), where("categoria", "=", ruta))
+            getDocs(queryCollection)
+                .then(resp => setProductos(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
+                .catch(err => console.log(err))
+                .finally(()=> setLoading(false))           
         } else {
-            getFetch
-            .then((resp)=> setProductos(resp))
-            .catch((err)=> console.log (err))
-            .finally(()=> setLoading(false))            
+            const queryCollection = query(collection(dataBase, "items"))
+            getDocs(queryCollection)
+                .then(resp => setProductos( resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
+                .catch(err => console.log(err))
+                .finally(()=> setLoading(false))           
         }
-    }, [ruta])
+    }, [ruta]) 
+
 
     return (
         <div className="container-fluid">

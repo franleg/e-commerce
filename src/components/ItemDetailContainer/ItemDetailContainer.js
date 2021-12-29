@@ -4,20 +4,30 @@ import { Spinner } from "react-bootstrap";
 import {getFetch} from "../../helpers/getFetch.js";
 import ItemDetail from "../ItemDetail/ItemDetail.js";
 import "./ItemDetailContainer.css"
+import { collection, doc, getDoc, getFirestore, query, where } from "firebase/firestore"
 
 const ItemDetailContainer = () => {
     const [producto, setProducto] = useState ({});
     const [loading, setLoading] = useState (true)
-    const inicial = 1;
-
     const {idProducto} = useParams();
 
-    useEffect(()=>{
-        getFetch
-        .then((resp)=> setProducto(resp.find(prod => prod.id === parseInt(idProducto))))
+    const inicial = 1;
+
+    // useEffect(()=>{
+    //     getFetch
+    //         .then((resp)=> setProducto(resp.find(prod => prod.id === parseInt(idProducto))))
+    //         .catch((err)=> console.log (err))
+    //         .finally(()=> setLoading(false)) 
+    // }, []);
+
+   useEffect(() => {
+    const dataBase = getFirestore()
+    const queryDataBase = doc(dataBase, "items", idProducto)
+    getDoc(queryDataBase)
+        .then(resp => setProducto( { id: resp.id, ...resp.data() } ))
         .catch((err)=> console.log (err))
         .finally(()=> setLoading(false)) 
-    }, []);
+    }, [idProducto]) 
 
     return (
         <div className="container-fluid item-container">
