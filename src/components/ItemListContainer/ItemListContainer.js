@@ -29,7 +29,7 @@ function ItemListContainer () {
     useEffect(() => {
         const dataBase = getFirestore()
         if (ruta) {
-            const queryCollection = query(collection(dataBase, "items"), where("categoria", "=", ruta))
+            const queryCollection = query(collection(dataBase, "items"), where("ruta", "==", ruta))
             getDocs(queryCollection)
                 .then(resp => setProductos(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
                 .catch(err => console.log(err))
@@ -47,17 +47,17 @@ function ItemListContainer () {
     return (
         <div className="container-fluid">
             <div className="row div-container">
-                { loading ?
-                    <div className="spinner-container">
-                        <div className="spinner-div">
-                            <Spinner color="primary" animation="grow" role="status">
-                            <span className="visually-hidden">Loading...</span>
-                            </Spinner>
+                    { loading ?
+                        <div className="spinner-container">
+                            <div className="spinner-div">
+                                <Spinner color="primary" animation="grow" role="status">
+                                <span className="visually-hidden">Loading...</span>
+                                </Spinner>
+                            </div>
                         </div>
-                    </div>
-                    :
-                    <ItemList productos={productos}/>
-                } 
+                        :
+                            <ItemList productos={productos}/>
+                    } 
             </div>
         </div>
     )
