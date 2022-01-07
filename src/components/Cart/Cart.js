@@ -91,7 +91,9 @@ const Cart = () => {
                     </div>  
                     <div className="row">
                         <div className="col-lg-12 col-xs-12 text-center">
-                            <button className="btn-finalizarCompra">Finalizar Compra</button>
+                            <Link to="/checkout">
+                                <Button className="btn-finalizarCompra">Finalizar Compra</Button>
+                            </Link>
                         </div>
                     </div>           
                 </div>

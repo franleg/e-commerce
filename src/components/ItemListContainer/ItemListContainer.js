@@ -55,7 +55,7 @@ function ItemListContainer () {
                                 </Spinner>
                             </div>
                         </div>
-                        :
+                        :   
                             <ItemList productos={productos}/>
                     } 
             </div>

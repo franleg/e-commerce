@@ -1,16 +1,9 @@
 .container-fluid {
     padding: 0px;
     overflow-x: hidden;
-    position: relative;
-    right: 5px;
-    @media only screen and (max-width: 767px){
-        width: 50%;
-    }
 }
 
 .card-container {
-    display: flex;
-    justify-content: center;
     margin-top: 50px;
     padding: 0px;
 }
