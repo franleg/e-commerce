@@ -4,10 +4,13 @@ import {useState} from "react";
 import {useCartContext} from "../../context/CartContext";
 import validate from "../../helpers/validate"
 import { Navigate } from 'react-router';
+import { query, where, documentId, collection, getDocs, Timestamp, writeBatch, addDoc, getFirestore } from '@firebase/firestore';
+import Swal from 'sweetalert2';
+import Form from "../Form/Form"
 
 function Checkout() {
-
-    const {cartList, totalCompra} = useCartContext();
+    
+    const {cartList, totalCompra, vaciarCarrito} = useCartContext();
 
     const [values, setValues] = useState({
         nombre: "",
@@ -24,7 +27,7 @@ function Checkout() {
         })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (!validate(values)) {return}
@@ -37,12 +40,57 @@ function Checkout() {
                 const modelo = cartItem.modelo;
                 const precio = cartItem.precioEfectivo * cartItem.cantidad;
 
-                return (id, marca, modelo, precio)
+                return ({id, marca, modelo, precio})
             }),
-            total: totalCompra()
-
+            total: totalCompra(),
+            date: Timestamp.fromDate(new Date())
         }
-        console.log(order)  
+
+        const dataBase = getFirestore()
+
+        const batch = writeBatch(dataBase)
+
+        const ordersCollection = collection(dataBase, "orders")
+        const itemsCollection = collection(dataBase, "items")
+        const queryStockUpdate = query(itemsCollection, where(documentId(), "in", cartList.map(el => el.id)))
+
+        const outOfStock = []
+
+        const products = await getDocs(queryStockUpdate)
+
+        products.docs.forEach((doc)=>{
+            const itemToUpdate = cartList.find(el => el.id === doc.id)
+
+            if(doc.data().stock >
+             itemToUpdate.cantidad){
+                batch.update(doc.ref, {
+                    stock: doc.data().stock - itemToUpdate.cantidad
+                })
+            }else {
+                outOfStock.push(itemToUpdate)
+            }
+        })
+
+        if (outOfStock.length === 0) {
+            addDoc(ordersCollection, order)
+                .then((res)=> {
+                    batch.commit()
+                    Swal.fire({
+                        icon:"success",
+                        title:"Su compra se ha realizado exitosamente",
+                        text: `Su número de orden es ${res.id}`,
+                        confirmButtonColor: "#212529"
+                    })
+                    vaciarCarrito()
+                })
+        } else {
+            Swal.fire({
+                icon:"error",
+                title: "Disculpe, no hay stock de los siguientes modelos:",
+                text: outOfStock.map(el => el.modelo).join(", "),
+                confirmButtonColor: "#212529"
+            })
+        }
     }
 
     return (
@@ -59,56 +107,7 @@ function Checkout() {
                     </div>
                     <div className="row">
                         <div className="col-lg-12 col-xs-12">
-                            <form onSubmit={handleSubmit}>
-                                <label for="nombre" class="formulario-titulo">Nombre</label>
-                                <input 
-                                    onChange={handleInputChange} 
-                                    name= "nombre"
-                                    value= {values.nombre}
-                                    className= "form-control my-2"
-                                    type= "text"
-                                    placeholder= "Escriba su nombre"
-                                />
-                                <label for="apellido" class="formulario-titulo">Apellido</label>
-                                <input 
-                                    onChange={handleInputChange} 
-                                    name= "apellido"
-                                    value= {values.apellido}
-                                    className="form-control my-2"
-                                    type= "text"
-                                    placeholder= "Escriba su apellido"
-                                />
-                                <label for="telefono" class="formulario-titulo">Telefono</label>
-                                <input 
-                                    onChange={handleInputChange} 
-                                    name= "telefono"
-                                    value= {values.telefono}
-                                    className="form-control my-2"
-                                    type= "number"
-                                    placeholder= "Escriba su teléfono"
-                                />
-                                <label for="email" class="formulario-titulo">E-mail</label>
-                                <input 
-                                    onChange={handleInputChange} 
-                                    name= "email"
-                                    value= {values.email}
-                                    className="form-control my-2"
-                                    type= "email"
-                                    placeholder= "nombre@ejemplo.com"
-                                />  
-                                <label for="emailConfirm" class="formulario-titulo">E-mail</label>
-                                <input 
-                                    onChange={handleInputChange} 
-                                    name= "emailConfirm"
-                                    value= {values.emailConfirm}
-                                    className="form-control my-2"
-                                    type= "email"
-                                    placeholder= "Repita su e-mail"
-                                /> 
-                                <div className="text-center">    
-                                    <button type="submit" className="btn-confirmarCompra">Confirmar Compra</button>    
-                                </div>                             
-                            </form>
+                            <Form onSubmit={handleSubmit} onChange={handleInputChange} values={values.nombre, values.apellido, values.telefono, values.email, values.emailConfirm}/>
                         </div>
                     </div>
                 </div>

@@ -6,6 +6,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import Cart from "./components/Cart/Cart.js"
 import Checkout from "./components/Checkout/Checkout.js"
 import CartContextProvider from "./context/CartContext"
+import Carousels from "./components/Carousel/Carousels.js"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <NavBar/>
+          <Carousels/>
           <Routes>
             <Route
               exact
