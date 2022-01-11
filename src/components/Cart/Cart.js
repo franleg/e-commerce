@@ -30,7 +30,7 @@ const Cart = () => {
                                 </thead>
                                 <tbody>
                                     {cartList.map(prod=>                
-                                        <tr>
+                                        <tr key={prod.id}>
                                             <td className="td-cart"><FontAwesomeIcon icon={faTrash} className="icono-vaciar" onClick={()=> {removerDelCarrito(prod.id)}}/></td>
                                             <td className="td-img"><Link to={`/detalle/${prod.id}`}><Card.Img variant="top" src={prod.imagen}/></Link></td>
                                             <td className="td-prod">{prod.marca} {prod.modelo}</td>

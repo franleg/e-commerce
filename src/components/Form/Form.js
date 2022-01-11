@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Form.css";
 
-function Form(handleInputChange, handleSubmit, values) {
+function Form({handleInputChange, handleSubmit, values}) {
 
     return (
         <>

@@ -31,7 +31,7 @@ function Checkout() {
         e.preventDefault();
 
         if (!validate(values)) {return}
-
+        
         const order = {
             buyer: {...values},
             items: cartList.map(cartItem => {
@@ -107,7 +107,7 @@ function Checkout() {
                     </div>
                     <div className="row">
                         <div className="col-lg-12 col-xs-12">
-                            <Form onSubmit={handleSubmit} onChange={handleInputChange} values={values.nombre, values.apellido, values.telefono, values.email, values.emailConfirm}/>
+                            <Form handleSubmit={handleSubmit} handleInputChange={handleInputChange} values={values.nombre, values.apellido, values.telefono, values.email, values.emailConfirm}/>
                         </div>
                     </div>
                 </div>
