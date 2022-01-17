@@ -1,11 +1,11 @@
 import ItemCount from "../ItemCount/ItemCount.js";
-import {Link} from "react-router-dom";
-import {useState} from "react";
-import "./ItemDetail.css";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import Button from "react-bootstrap/Button";
-import {useCartContext} from "../../context/CartContext"
+import { useCartContext } from "../../context/CartContext"
+import "./ItemDetail.css";
 
-const ItemDetail = ({inicial, stock, producto}) => {
+const ItemDetail = ({initial, stock, producto}) => {
 
     const [goCart, setGoCart] = useState(false);
 
@@ -17,6 +17,7 @@ const ItemDetail = ({inicial, stock, producto}) => {
         agregarAlCarrito ({...producto, cantidad:cantidad})
     }
     console.log (cartList);
+
     return (
         <div className="container-fluid">
             <div className="row">
@@ -36,10 +37,12 @@ const ItemDetail = ({inicial, stock, producto}) => {
                         <h2>{`${producto.categoria}`}</h2>
                         <p className="description-container">{`${producto.descripcion}`}</p>
                         {!goCart ? 
-                            <ItemCount inicial={inicial} stock={stock} onAdd={onAdd}/>
+                            <ItemCount initial={initial} stock={stock} onAdd={onAdd}/>
                             :
                             <>
-                            <Link to="/cart"><Button className="btn-agregarCarrito" variant="primary">Ir al carrito</Button></Link>
+                                <Link to="/carrito"><Button className="btn-agregarCarrito" variant="primary">Ir al carrito</Button></Link>
+                                <br/>
+                                <Link to="/"><Button className="btn-agregarCarrito" variant="primary">Volver al inicio</Button></Link>
                             </>
                         }
                     </div>

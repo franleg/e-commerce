@@ -1,10 +1,9 @@
-import {useCartContext} from "../../context/CartContext"
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faShoppingCart} from "@fortawesome/free-solid-svg-icons";
+import { useCartContext } from "../../context/CartContext"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import "./ShoppingCart.css";
 
 function ShoppingCart () {
-
     const {totalCantidad, cartList} = useCartContext();
 
     return (

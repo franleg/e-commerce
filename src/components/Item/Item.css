@@ -1,15 +1,24 @@
 .card-container {
     font-family: Poppins;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
 }
 
 .card {
+    text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: all 400ms ease;
+    margin: 10px;
 }
 
 .card:hover {
     transform: translateY(-0.1px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-img {
+    max-width: 75%;
 }
 
 .precio {

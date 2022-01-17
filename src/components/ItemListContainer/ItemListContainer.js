@@ -1,10 +1,9 @@
-import {useState, useEffect} from "react";
-import {useParams} from "react-router-dom"
-import {getFetch} from "../../helpers/getFetch.js";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom"
 import { Spinner } from "react-bootstrap";
-import "./ItemListContainer.css";
 import ItemList from "../ItemList/ItemList.js";
 import { collection, getFirestore, getDocs, query, where } from "firebase/firestore"
+import "./ItemListContainer.css";
 
 function ItemListContainer () {
     const [productos, setProductos] = useState ([])
@@ -12,40 +11,20 @@ function ItemListContainer () {
 
     const {ruta} = useParams();
 
-    // useEffect(()=>{
-    //     if (ruta) {
-    //         getFetch
-    //         .then((resp)=> setProductos(resp.filter(prod => prod.ruta === ruta)))
-    //         .catch((err)=> console.log (err))
-    //         .finally(()=> setLoading(false))            
-    //     } else {
-    //         getFetch
-    //         .then((resp)=> setProductos(resp))
-    //         .catch((err)=> console.log (err))
-    //         .finally(()=> setLoading(false))            
-    //     }
-    // }, [ruta])
-
     useEffect(() => {
         const dataBase = getFirestore()
-        if (ruta) {
-            const queryCollection = query(collection(dataBase, "items"), where("ruta", "==", ruta))
-            getDocs(queryCollection)
-                .then(resp => setProductos(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
-                .catch(err => console.log(err))
-                .finally(()=> setLoading(false))           
-        } else {
-            const queryCollection = query(collection(dataBase, "items"))
-            getDocs(queryCollection)
-                .then(resp => setProductos( resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
-                .catch(err => console.log(err))
-                .finally(()=> setLoading(false))           
-        }
-    }, [ruta]) 
-
+        const queryCollection = ruta ? 
+            query(collection(dataBase, "items"), where("ruta", "==", ruta))
+            :
+            query(collection(dataBase, "items"))
+        getDocs(queryCollection)
+            .then(resp => setProductos( resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
+            .catch(err => console.log(err))
+            .finally(()=> setLoading(false))
+    }, [ruta])     
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid list-container">
             <div className="row div-container">
                     { loading ?
                         <div className="spinner-container">
@@ -56,7 +35,7 @@ function ItemListContainer () {
                             </div>
                         </div>
                         :   
-                            <ItemList productos={productos}/>
+                        <ItemList productos={productos}/>
                     } 
             </div>
         </div>

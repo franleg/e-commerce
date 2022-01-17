@@ -1,21 +1,19 @@
-import React from 'react'
-import "./Checkout.css";
-import {useState} from "react";
-import {useCartContext} from "../../context/CartContext";
+import { useState } from "react";
+import { useCartContext } from "../../context/CartContext";
 import validate from "../../helpers/validate"
 import { Navigate } from 'react-router';
 import { query, where, documentId, collection, getDocs, Timestamp, writeBatch, addDoc, getFirestore } from '@firebase/firestore';
 import Swal from 'sweetalert2';
 import Form from "../Form/Form"
+import "./Checkout.css";
 
-function Checkout() {
-    
+function Checkout() { 
     const {cartList, totalCompra, vaciarCarrito} = useCartContext();
 
     const [values, setValues] = useState({
-        nombre: "",
-        apellido: "",
-        telefono: "",
+        name: "",
+        lastName: "",
+        phone: "",
         email: "",
         emailConfirm: "",
     });
@@ -60,7 +58,6 @@ function Checkout() {
 
         products.docs.forEach((doc)=>{
             const itemToUpdate = cartList.find(el => el.id === doc.id)
-
             if(doc.data().stock >
              itemToUpdate.cantidad){
                 batch.update(doc.ref, {
@@ -107,7 +104,7 @@ function Checkout() {
                     </div>
                     <div className="row">
                         <div className="col-lg-12 col-xs-12">
-                            <Form handleSubmit={handleSubmit} handleInputChange={handleInputChange} values={values.nombre, values.apellido, values.telefono, values.email, values.emailConfirm}/>
+                            <Form handleSubmit={handleSubmit} handleInputChange={handleInputChange} values={values.name, values.lastName, values.phone, values.email, values.emailConfirm}/>
                         </div>
                     </div>
                 </div>

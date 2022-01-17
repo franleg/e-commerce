@@ -1,24 +1,17 @@
-import {useState, useEffect} from "react";
-import {useParams} from "react-router-dom"
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom"
 import { Spinner } from "react-bootstrap";
-import {getFetch} from "../../helpers/getFetch.js";
 import ItemDetail from "../ItemDetail/ItemDetail.js";
 import "./ItemDetailContainer.css"
-import { collection, doc, getDoc, getFirestore, query, where } from "firebase/firestore"
+import { doc, getDoc, getFirestore } from "firebase/firestore"
 
 const ItemDetailContainer = () => {
     const [producto, setProducto] = useState ({});
     const [loading, setLoading] = useState (true)
+
     const {idProducto} = useParams();
 
-    const inicial = 1;
-
-    // useEffect(()=>{
-    //     getFetch
-    //         .then((resp)=> setProducto(resp.find(prod => prod.id === parseInt(idProducto))))
-    //         .catch((err)=> console.log (err))
-    //         .finally(()=> setLoading(false)) 
-    // }, []);
+    const initial = 1;
 
    useEffect(() => {
     const dataBase = getFirestore()
@@ -41,7 +34,7 @@ const ItemDetailContainer = () => {
                         </div>
                     </div>
                     :
-                    <ItemDetail inicial={inicial} stock={producto.stock} producto={producto}/>               
+                    <ItemDetail initial={initial} stock={producto.stock} producto={producto}/>               
                 }
             </div>
         </div>

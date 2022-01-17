@@ -1,12 +1,12 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer.js";
-import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer.js"
-import Cart from "./components/Cart/Cart.js"
-import Checkout from "./components/Checkout/Checkout.js"
-import CartContextProvider from "./context/CartContext"
-import Carousels from "./components/Carousel/Carousels.js"
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer.js";
+import Cart from "./components/Cart/Cart.js";
+import Checkout from "./components/Checkout/Checkout.js";
+import Footer from "./components/Footer/Footer.js";
+import CartContextProvider from "./context/CartContext";
 
 function App() {
   return (
@@ -14,7 +14,6 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <NavBar/>
-          <Carousels/>
           <Routes>
             <Route
               exact
@@ -33,15 +32,16 @@ function App() {
             />
             <Route
               exact
-              path="/cart"
+              path="/carrito"
               element={<Cart/>}
             />  
             <Route
               exact
               path="/checkout"
               element={<Checkout/>}
-            />
+            />        
           </Routes>
+          <Footer/>
         </div>
       </BrowserRouter>
     </CartContextProvider>

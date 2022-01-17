@@ -3,14 +3,8 @@
     overflow-x: hidden;
 }
 
-.card-container {
-    margin-top: 50px;
-    padding: 0px;
-}
-
-.card {
-    text-align: center;
-    margin: 10px !important;
+.list-container {
+    background-color: #faf8f8;
 }
 
 .spinner-container {
@@ -26,9 +20,5 @@
 }
 
 .div-container {
-    padding: 30px;
-}
-
-.card {
-    margin: 10px;
+    max-width: 100%;
 }

@@ -1,4 +1,4 @@
-import {createContext, useState, useContext} from "react";
+import { createContext, useState, useContext } from "react";
 
 const CartContext = createContext([])
 
@@ -9,7 +9,6 @@ function CartContextProvider({children}) {
 
     function agregarAlCarrito(item) {
         let index = cartList.findIndex(i => i.id === item.id);
-
         if (index > -1){
             const oldItem = cartList [index].cantidad
             cartList.splice(index, 1)

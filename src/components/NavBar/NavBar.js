@@ -1,17 +1,17 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Navbar from "react-bootstrap/NavBar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import "./NavBar.css";
 import ShoppingCart from "./ShoppingCart";
-import logo1 from "../../assets/img/logo1.png"
+import logo from "../../assets/img/logo.png"
+import "./NavBar.css";
 
 const NavBar = () => {
     return(
         <Navbar className="nav-container sticky-top" bg="dark" expand="lg" variant="dark">
             <Container>
-                <Navbar.Brand><Link to="/" className="link"><img src={logo1} className="logo img-fluid"/></Link></Navbar.Brand>
+                <Navbar.Brand><Link to="/" className="link"><img src={logo} className="logo img-fluid"/></Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse className="nav" id="basic-navbar-nav">
                     <Nav className="me-auto">
@@ -24,8 +24,7 @@ const NavBar = () => {
                             <NavDropdown.Divider />
                             <NavDropdown.Item><Link to="/" className="link">Todos</Link></NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link><Link to="/contact" className="link">Contacto</Link></Nav.Link>
-                        <Nav.Link><Link to="/cart" className="link"><ShoppingCart /></Link></Nav.Link>
+                        <Nav.Link><Link to="/carrito" className="link"><ShoppingCart /></Link></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

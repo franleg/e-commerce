@@ -2,9 +2,8 @@ import { useCounter } from "../../hooks/useCounter";
 import "./ItemCount.css";
 import Button from "react-bootstrap/Button";
 
-const ItemCount = ( {inicial, stock, onAdd} ) => {
-
-    const {counter, increment, decrement} = useCounter (inicial, stock)
+const ItemCount = ( {initial, stock, onAdd} ) => {
+    const {counter, increment, decrement} = useCounter (initial, stock)
 
     return (
         <div>
@@ -16,9 +15,6 @@ const ItemCount = ( {inicial, stock, onAdd} ) => {
             </div>
             <Button className="btn-agregarCarrito" variant="primary" onClick={()=> onAdd(counter)}>Agregar al carrito</Button>
         </div>
-
-
-
     )
 }
 

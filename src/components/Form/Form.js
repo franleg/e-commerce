@@ -1,4 +1,3 @@
-import React from 'react'
 import "./Form.css";
 
 function Form({handleInputChange, handleSubmit, values}) {
@@ -9,8 +8,8 @@ function Form({handleInputChange, handleSubmit, values}) {
                 <label for="nombre" class="formulario-titulo">Nombre</label>
                 <input 
                     onChange={handleInputChange} 
-                    name= "nombre"
-                    value= {values.nombre}
+                    name= "name"
+                    value= {values.name}
                     className= "form-control my-2"
                     type= "text"
                     placeholder= "Escriba su nombre"
@@ -18,8 +17,8 @@ function Form({handleInputChange, handleSubmit, values}) {
                 <label for="apellido" class="formulario-titulo">Apellido</label>
                 <input 
                     onChange={handleInputChange} 
-                    name= "apellido"
-                    value= {values.apellido}
+                    name= "lastName"
+                    value= {values.lastName}
                     className="form-control my-2"
                     type= "text"
                     placeholder= "Escriba su apellido"
@@ -27,8 +26,8 @@ function Form({handleInputChange, handleSubmit, values}) {
                 <label for="telefono" class="formulario-titulo">Telefono</label>
                 <input 
                     onChange={handleInputChange} 
-                    name= "telefono"
-                    value= {values.telefono}
+                    name= "phone"
+                    value= {values.phone}
                     className="form-control my-2"
                     type= "number"
                     placeholder= "Escriba su teléfono"
