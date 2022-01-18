@@ -13,23 +13,6 @@
     background-color: #212529 !important;
 }
 
-.btn-agregarCarrito {
-    text-align: center;
-    margin-top: 14px;
-    background-color: #212529;
-    border-color: #212529;
-    border-radius: 0px;
-    color: #9b9d97;
-    width: 32%;
-    padding: 8px;
-}
-
-.btn-agregarCarrito:hover {
-    background-color: #212529;
-    color: #fff;
-    border-color: #212529;
-}
-
 .contenedor-cantidad {
 	border: solid 1px #d4d2d2;
 	width: 32%;
@@ -41,6 +24,7 @@
     padding-right: 60px;
     cursor: pointer;
 }
+
 .contenedor-restar:hover {
     font-weight: 500;
 }
@@ -55,4 +39,10 @@
 
 .cantidad {
     position: absolute;
+}
+
+@media only screen and (max-width: 768px) {
+    .contenedor-cantidad {
+        width: 50%;
+    }
 }

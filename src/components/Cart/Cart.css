@@ -1,5 +1,6 @@
-.contenedor-carrito{
+.cart-container{
     overflow-x: hidden;
+    padding-bottom: 80px;
 }
 
 .btn-vaciarCarrito {
@@ -110,4 +111,25 @@
     background-color: #9b9d97;
     border: 1px solid #9b9d97;
     color: #212529;
+}
+
+.empty-cart {
+    padding-bottom: 300px;
+}
+
+@media only screen and (max-width: 768px){
+    .btn-vaciarCarrito{
+        font-size: 16px;
+        width: 160px !important;
+    }
+
+    .btn-seguirComprando {
+        width: 160px;
+        font-size: 16px;
+    }
+
+    .btn-finalizarCompra {
+        font-size: 16px;
+        width: 50%;
+    }
 }

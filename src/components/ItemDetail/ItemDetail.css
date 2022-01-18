@@ -3,10 +3,6 @@
     font-family: Poppins;
 }
 
-.img-container {
-    width: 200%
-}
-
 hr {
     margin-bottom: 30px;
 }
@@ -43,4 +39,44 @@ p {
 
 .precio-efectivo{
     color: green;
+}
+
+.btn-agregarCarrito {
+    text-align: center;
+    margin-top: 14px;
+    background-color: #212529;
+    border-color: #212529;
+    border-radius: 0px;
+    color: #9b9d97;
+    width: 32%;
+    padding: 8px;
+}
+
+.btn-agregarCarrito:hover {
+    background-color: #212529;
+    color: #fff;
+    border-color: #212529;
+}
+
+@media only screen and (max-width: 768px) {
+    .detail-container{
+        padding: 20px;
+    }
+    .img-container {
+        width: 80%;
+        position: relative;
+        left: 30px;
+    }
+    h1 {
+        font-size: 32px;
+        font-weight: 700;
+    }
+    h2 {
+        font-size: 26px;
+        font-weight: 600;
+    }
+    .btn-agregarCarrito {
+        font-size: 16px;
+        width: 50%;
+    }
 }

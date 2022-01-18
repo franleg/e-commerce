@@ -21,9 +21,9 @@ const ItemDetail = ({initial, stock, producto}) => {
     return (
         <div className="container-fluid">
             <div className="row">
-                <div className="col-lg-6">
-                    <div className="detail-container d-flex justify-content-end">
-                        <img src={producto.imagen} className="img-fluid img-container" /> 
+                <div className="col-lg-6 col-xs-6">
+                    <div className="detail-container img-container">
+                        <img src={producto.imagen} className="img-fluid" /> 
                     </div>
                 </div>
                 <div className="col-lg-6 col-xs-6">

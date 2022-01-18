@@ -1,41 +1,50 @@
 .footer-container{
     background-color: #212529;
     color: #fff;
-    margin-top: 80px;
     padding-top: 30px;
 }
 
-.row{
-     max-width: 100%;
+.row {
+    width: 100%;
+}
+
+.newsletter-container{
+    text-align: left;
+    padding-left: 80px;
+}
+
+.categories-container{
+    text-align: center;
+}
+
+.category-link {
+    transition: all 0.2s ease;
+}
+
+.category-link:hover{
+    color: #c8c8c8;
+}
+
+.contact-container {
+    text-align: right;
+    padding-right: 80px;
+}
+
+.footer-hr {
+    margin-right: 100px;
+    margin-left: 100px;
 }
 
 .social-container {
-    display: flex;
+    text-align: center;
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 28px;
 }
 
 .facebook-icon {
     margin-left: 25px;
-   margin-right: 25px;
-}
-
-.newsletter-container{
-    padding-left: 100px;
-}
-
-.contact-container{
-    display: flex;
-    padding-left: 100px;
-}
-
-.contact-link {
-    transition: all 0.2s ease;
-}
-
-.contact-link:hover{
-    color: #c8c8c8;
+    margin-right: 25px;
 }
 
 .copyright-container{
@@ -45,4 +54,25 @@
 
 .copyright {
     padding-bottom: 10px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .newsletter-container {
+        padding-left: 75px;
+        font-size: 16px;
+    }
+
+    .categories-container {
+        text-align: left;
+        padding-left: 120px;
+        padding-top: 30px;
+    }
+
+    .contact-container {
+        text-align: left;
+        padding-left: 120px;
+        padding-top: 30px;
+    }
+
 }

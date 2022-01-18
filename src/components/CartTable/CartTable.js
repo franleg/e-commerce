@@ -11,10 +11,10 @@ function CartTable() {
 
     return (
         <>
-            <Table className="tabla-carrito">
+            <Table className="table-cart">
                 <thead>
                     <tr>
-                        <th className="th-cart"></th>
+                        <th className="th-delete"></th>
                         <th className="th-img"></th>
                         <th className="th-prod">PRODUCTO</th>
                         <th>PRECIO</th>
@@ -27,18 +27,18 @@ function CartTable() {
                         <tr key={prod.id}>
                             <td className="td-cart"><FontAwesomeIcon icon={faTrash} className="icono-vaciar" onClick={()=> {removerDelCarrito(prod.id)}}/></td>
                             <td className="td-img"><Link to={`/detalle/${prod.id}`}><Card.Img variant="top" src={prod.imagen}/></Link></td>
-                            <td className="td-prod">{prod.marca} {prod.modelo}</td>
-                            <td className="td-price">${prod.precioEfectivo}</td>
-                            <td className="td-cant">
-                                <div className="td-container">
-                                    <div className="cant-container">{prod.cantidad}</div>
+                            <td dataLabel="PRODUCTO" className="td-prod">{prod.marca} {prod.modelo}</td>
+                            <td dataLabel="PRECIO" className="td-price">${prod.precioEfectivo}</td>
+                            <td dataLabel="CANTIDAD" className="td-cant">
+                                <div className="cant-container">
+                                    {prod.cantidad}  
                                     <div className="arrow-container">
-                                        <FontAwesomeIcon icon={faAngleUp} className="up" onClick={()=> addQuantity(prod)}/>
-                                        <FontAwesomeIcon icon={faAngleDown} className="down"onClick={()=> subtractQuantity(prod)}/>
+                                        <FontAwesomeIcon icon={faAngleUp} onClick={()=> addQuantity(prod)}/>
+                                        <FontAwesomeIcon icon={faAngleDown} onClick={()=> subtractQuantity(prod)}/>
                                     </div>
-                                </div>
+                                </div>                                   
                             </td>
-                            <td className="td-price">$ {prod.precioEfectivo * prod.cantidad}</td>
+                            <td dataLabel="SUBTOTAL" className="td-price">$ {prod.precioEfectivo * prod.cantidad}</td>
                         </tr>)}
                 </tbody>
             </Table> 

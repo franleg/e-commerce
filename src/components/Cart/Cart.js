@@ -9,9 +9,9 @@ const Cart = () => {
     const {cartList, vaciarCarrito} = useCartContext()
 
     return (
-        <div>
+        <>
             {cartList.length > 0 ?
-                <div className="container-fluid contenedor-carrito">
+                <div className="container-fluid cart-container">
                     <div class="row">
                         <div class="col-lg-12 col-xs-12 d-flex justify-content-center">
                             <CartTable />
@@ -44,7 +44,7 @@ const Cart = () => {
                     </div>           
                 </div>
                 :
-                <div className="text-center">
+                <div className="empty-cart text-center">
                     <h2 className="texto-carrito">El carrito de compras está vacío</h2>
                     <hr className="hr-carrito"/>
                     <Link to="/">
@@ -53,7 +53,7 @@ const Cart = () => {
 
                 </div>
             } 
-        </div>
+        </>
     )
 }
 
