@@ -10,11 +10,19 @@
 
 .newsletter-container{
     text-align: left;
-    padding-left: 80px;
+    padding-left: 100px;
+}
+
+.newsletter-container h2 {
+    padding-bottom: 10px;
 }
 
 .categories-container{
     text-align: center;
+}
+
+.categories-container h2 {
+    padding-bottom: 10px;
 }
 
 .category-link {
@@ -27,7 +35,11 @@
 
 .contact-container {
     text-align: right;
-    padding-right: 80px;
+    padding-right: 100px;
+}
+
+.contact-container h2 {
+    padding-bottom: 10px;
 }
 
 .footer-hr {
@@ -65,14 +77,18 @@
 
     .categories-container {
         text-align: left;
-        padding-left: 120px;
+        padding-left: 75px;
         padding-top: 30px;
     }
 
     .contact-container {
         text-align: left;
-        padding-left: 120px;
+        padding-left: 75px;
         padding-top: 30px;
     }
 
+    .footer-hr {
+        margin-left: 75px;
+        margin-right: 75px;
+    }
 }

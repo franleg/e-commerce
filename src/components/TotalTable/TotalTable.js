@@ -3,11 +3,11 @@ import "./TotalTable.css";
 import Table from "react-bootstrap/Table";
 
 function TotalTable() {
-    const {totalCompra} = useCartContext()
+    const {totalPurchase} = useCartContext()
 
     return (
         <>
-            <Table className="tabla-total">
+            <Table className="total-table">
                 <tbody>
                     <tr>
                         <th>Envío</th>
@@ -24,7 +24,7 @@ function TotalTable() {
                     <tr>
                         <th>TOTAL</th>
                         <td>
-                            <span>${totalCompra()}</span>
+                            <span>${totalPurchase()}</span>
                         </td>
                     </tr>
                 </tbody>

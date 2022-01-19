@@ -1,7 +1,13 @@
-.tabla-total {
+.total-table {
     width: 32%;
     margin-top: 20px;
     margin-bottom: 40px;
     border: 1px solid #dee2e6 !important;
     font-family: Poppins;
+}
+
+@media only screen and (max-width: 768px) {
+    .total-table {
+        width: 70%;
+    }
 }

@@ -6,25 +6,33 @@ import TotalTable from "../TotalTable/TotalTable"
 import "./Cart.css";
 
 const Cart = () => {
-    const {cartList, vaciarCarrito} = useCartContext()
+    const {cartList, emptyCart} = useCartContext()
 
     return (
         <>
-            {cartList.length > 0 ?
+            {cartList.length > 0 
+                ?
                 <div className="container-fluid cart-container">
+                    <div className="row">
+                        <div className="col-lg-12 col-xs-12 text-center">
+                            <h1 className="title-cart">
+                                CARRITO DE COMPRAS
+                            </h1>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-lg-12 col-xs-12 d-flex justify-content-center">
                             <CartTable />
                         </div>
                     </div> 
                     <div className="row">
-                        <div className="col-lg-6 col-xs-6 text-end">
+                        <div className="col-lg-6 col-xs-6 btnSeguir-container">
                             <Link to="/">
                                 <Button className="btn-seguirComprando" variant="primary">Seguir Comprando</Button>
                             </Link>                            
                         </div>
-                        <div className="col-lg-6 col-xs-6 text-start">
-                            <button className="btn-vaciarCarrito" onClick={vaciarCarrito}>Vaciar Carrito</button>
+                        <div className="col-lg-6 col-xs-6 btnVaciar-container">
+                            <button className="btn-vaciarCarrito" onClick={emptyCart}>Vaciar Carrito</button>
                         </div>
                     </div>
                     <div className="row">

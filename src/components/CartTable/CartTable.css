@@ -1,7 +1,7 @@
 .table-cart {
     width: 80%;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     --bs-table-striped-bg: rgba(0, 0, 0, 0.0);
     vertical-align: baseline !important;
@@ -43,7 +43,7 @@ td {
     padding-bottom: 15px !important;
 }
 
-.td-cart {
+.td-delete {
     border-right: none;
     padding-right: 20px !important;
     padding-left: 0px !important;
@@ -94,18 +94,27 @@ td {
     padding-top: 1px;
 }
 
+.icono-vaciar {
+    cursor: pointer;
+}
+
+.icono-vaciar:hover {
+    font-size: 18px;
+    color: #9b9d97;
+}
+
 @media only screen and (max-width: 768px) {
-    .table {
+    .table-cart {
         border: 0px !important;
         box-shadow: none;
         border-collapse: unset;
     }
 
-    .table thead {
+    .table-cart .thead-cart {
         display: none;
     }
 
-    .table tr {
+    .table-cart .tr-cart {
         margin-bottom: 20px;
         display: block;
         border: 1px solid #ddd;
@@ -116,24 +125,24 @@ td {
         padding-left: 10px !important;
     }
 
-    .table th, .table td {
+    .table-cart .th-cart, .table-cart .td-cart {
         font-size: 14px;
     }
 
-    .table td {
+    .table-cart .td-cart {
         display: block;
         border: 1px solid #ddd;
         text-align: right;
     }
 
-    .table td:before {
+    .table-cart .td-cart:before {
         content: attr(dataLabel);
         font-weight: bold;
         float: left;
         color: #6f6f6f !important;
     }
 
-    tbody, td, th, thead, tr {
+    .tbody-cart, .td-cart, .th-cart, .thead-cart, .tr-cart {
         border-color: none;
         border-style: none;
         border-width: none;

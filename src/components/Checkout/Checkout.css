@@ -11,6 +11,10 @@
     margin-right: 300px;
 }
 
+.form-container {
+    padding-bottom: 80px;
+}
+
 @media only screen and (max-width: 768px) {
     .hr-resumen{
         margin-top: 30px;

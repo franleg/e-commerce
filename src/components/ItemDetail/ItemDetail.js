@@ -9,12 +9,12 @@ const ItemDetail = ({initial, stock, producto}) => {
 
     const [goCart, setGoCart] = useState(false);
 
-    const {cartList, agregarAlCarrito} = useCartContext()
+    const {cartList, addToCart} = useCartContext()
 
     const onAdd = (cantidad) => {
         console.log(cantidad);
         setGoCart (true)
-        agregarAlCarrito ({...producto, cantidad:cantidad})
+        addToCart ({...producto, cantidad:cantidad})
     }
     console.log (cartList);
 

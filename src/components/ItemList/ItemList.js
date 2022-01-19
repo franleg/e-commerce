@@ -2,10 +2,10 @@ import { memo } from "react";
 import Item from "../Item/Item.js"
 
 const ItemList = memo(
-    ({ productos, initial, stock }) => {
+    ({ products, initial, stock }) => {
         return (
             <>
-                { productos.map((prod) => <Item initial={initial} stock={stock} prod={prod} />) }
+                { products.map((prod) => <Item initial={initial} stock={stock} prod={prod} />) }
             </>
         )
     }

@@ -15,7 +15,7 @@ import imagen14 from "../assets/img/compacteras.1000.jpg"
 import imagen15 from "../assets/img/compacteras.2000.jpg"
 import imagen16 from "../assets/img/compacteras.3000.jpg"
 
-const productos = [
+const products = [
     { id: 1, categoria: "Auriculares", marca: "Sennheiser", modelo:"HD 25", descripcion: "Sennheiser HD 25 auriculares de estudio. Diseñados para aplicaciones de monitoreo profesional, los auriculares HD 25 ofrecen una excelente atenuación del ruido ambiente.", stock: 8, precioTarjeta: 55000, precioEfectivo: 52000, imagen: imagen, ruta: "auriculares"},
     { id: 2, categoria: "Auriculares", marca: "AIAIAI", modelo:"Dj Preset", descripcion: "Este preset se ha configurado con la unidad de altavoz S02 titanio recubierto que ofrece una representación sonora impactante e intenso ampliando la dinámica de bajos y de gama baja . La combinación de la cinta de nylon H02 durable y las almohadillas de cuero E02, proporciona un gran aislamiento, este es un audífono robusto, adecuado para actuaciones en directo, de música con altos bajos o pesada.", stock: 10, precioTarjeta: 52000, precioEfectivo: 49000, imagen: imagen2, ruta: "auriculares"},
     { id: 3, categoria: "Auriculares", marca: "Technics", modelo:"Dj 1200", descripcion: "El Technics - EAH-DJ1200 es el sucesor del legendario auricular para DJ RP-DJ1200. Los auriculares para DJ Profi-On-Ear cuentan con un controlador de nuevo desarrollo con una potente bobina de voz CAW de 40 mm para un sonido excepcional, que se reproduce de forma clara y detallada incluso a volúmenes ambientales muy altos. Además, el EAH-DJ1200 plegable ofrece una excelente funcionalidad y durabilidad para uso profesional de DJ.", stock: 5, precioTarjeta: 48000, precioEfectivo: 45000, imagen: imagen3, ruta: "auriculares"},
@@ -36,6 +36,6 @@ const productos = [
 
 export const getFetch = new Promise ((resolve)=>{
     setTimeout(()=>{
-        resolve(productos)
+        resolve(products)
     }, 2000)
 })

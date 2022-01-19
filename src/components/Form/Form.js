@@ -5,7 +5,7 @@ function Form({handleInputChange, handleSubmit, values}) {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <label for="nombre" class="formulario-titulo">Nombre</label>
+                <label for="nombre" class="title-form">Nombre</label>
                 <input 
                     onChange={handleInputChange} 
                     name= "name"
@@ -14,7 +14,7 @@ function Form({handleInputChange, handleSubmit, values}) {
                     type= "text"
                     placeholder= "Escriba su nombre"
                 />
-                <label for="apellido" class="formulario-titulo">Apellido</label>
+                <label for="apellido" class="title-form">Apellido</label>
                 <input 
                     onChange={handleInputChange} 
                     name= "lastName"
@@ -23,7 +23,7 @@ function Form({handleInputChange, handleSubmit, values}) {
                     type= "text"
                     placeholder= "Escriba su apellido"
                 />
-                <label for="telefono" class="formulario-titulo">Telefono</label>
+                <label for="telefono" class="title-form">Telefono</label>
                 <input 
                     onChange={handleInputChange} 
                     name= "phone"
@@ -32,7 +32,7 @@ function Form({handleInputChange, handleSubmit, values}) {
                     type= "number"
                     placeholder= "Escriba su teléfono"
                 />
-                <label for="email" class="formulario-titulo">E-mail</label>
+                <label for="email" class="title-form">E-mail</label>
                 <input 
                     onChange={handleInputChange} 
                     name= "email"
@@ -41,7 +41,7 @@ function Form({handleInputChange, handleSubmit, values}) {
                     type= "email"
                     placeholder= "nombre@ejemplo.com"
                 />  
-                <label for="emailConfirm" class="formulario-titulo">E-mail</label>
+                <label for="emailConfirm" class="title-form">E-mail</label>
                 <input 
                     onChange={handleInputChange} 
                     name= "emailConfirm"

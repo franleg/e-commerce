@@ -6,7 +6,7 @@ import { collection, getFirestore, getDocs, query, where } from "firebase/firest
 import "./ItemListContainer.css";
 
 function ItemListContainer () {
-    const [productos, setProductos] = useState ([])
+    const [products, setProducts] = useState ([])
     const [loading, setLoading] = useState (true)
 
     const {ruta} = useParams();
@@ -18,7 +18,7 @@ function ItemListContainer () {
             :
             query(collection(dataBase, "items"))
         getDocs(queryCollection)
-            .then(resp => setProductos( resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
+            .then(resp => setProducts( resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
             .catch(err => console.log(err))
             .finally(()=> setLoading(false))
     }, [ruta])     
@@ -35,7 +35,7 @@ function ItemListContainer () {
                             </div>
                         </div>
                         :   
-                        <ItemList productos={productos}/>
+                        <ItemList products={products}/>
                     } 
             </div>
         </div>

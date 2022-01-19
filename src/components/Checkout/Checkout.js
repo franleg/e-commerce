@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useCartContext } from "../../context/CartContext";
-import validate from "../../helpers/validate"
+import Validate from "../../helpers/Validate/Validate.js"
 import { Navigate } from 'react-router';
 import { query, where, documentId, collection, getDocs, Timestamp, writeBatch, addDoc, getFirestore } from '@firebase/firestore';
 import Swal from 'sweetalert2';
@@ -28,7 +28,7 @@ function Checkout() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!validate(values)) {return}
+        if (!Validate(values)) {return}
         
         const order = {
             buyer: {...values},
@@ -103,7 +103,7 @@ function Checkout() {
                         </div>  
                     </div>
                     <div className="row">
-                        <div className="col-lg-12 col-xs-12">
+                        <div className="col-lg-12 col-xs-12 form-container">
                             <Form handleSubmit={handleSubmit} handleInputChange={handleInputChange} values={values.name, values.lastName, values.phone, values.email, values.emailConfirm}/>
                         </div>
                     </div>
