@@ -34,11 +34,11 @@ function Checkout() {
             buyer: {...values},
             items: cartList.map(cartItem => {
                 const id = cartItem.id; 
-                const marca = cartItem.marca;
-                const modelo = cartItem.modelo;
-                const precio = cartItem.precioEfectivo * cartItem.cantidad;
+                const brand = cartItem.marca;
+                const model = cartItem.modelo;
+                const price = cartItem.precioEfectivo * cartItem.cantidad;
 
-                return ({id, marca, modelo, precio})
+                return ({id, brand, model, price})
             }),
             total: totalPurchase(),
             date: Timestamp.fromDate(new Date())
