@@ -26,7 +26,7 @@ const ItemDetailContainer = () => {
         <div className="container-fluid item-container">
             <div className="row">
                 { loading ?
-                    <Loading />
+                    <Loading/>
                     :
                     <ItemDetail initial={initial} stock={product.stock} product={product}/>               
                 }
