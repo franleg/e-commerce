@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"
-import { Spinner } from "react-bootstrap";
 import ItemList from "../ItemList/ItemList.js";
 import { collection, getFirestore, getDocs, query, where } from "firebase/firestore"
 import "./ItemListContainer.css";
+import Loading from "../Loading/Loading.js";
 
 function ItemListContainer () {
     const [products, setProducts] = useState ([])
@@ -27,13 +27,7 @@ function ItemListContainer () {
         <div className="container-fluid list-container">
             <div className="row div-container">
                     { loading ?
-                        <div className="spinner-container">
-                            <div className="spinner-div">
-                                <Spinner color="primary" animation="grow" role="status">
-                                <span className="visually-hidden">Loading...</span>
-                                </Spinner>
-                            </div>
-                        </div>
+                        <Loading/>
                         :   
                         <ItemList products={products}/>
                     } 
