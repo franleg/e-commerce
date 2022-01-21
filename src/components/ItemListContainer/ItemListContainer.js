@@ -9,19 +9,19 @@ function ItemListContainer () {
     const [products, setProducts] = useState ([])
     const [loading, setLoading] = useState (true)
 
-    const {ruta} = useParams();
+    const {route} = useParams();
 
     useEffect(() => {
         const dataBase = getFirestore()
-        const queryCollection = ruta ? 
-            query(collection(dataBase, "items"), where("ruta", "==", ruta))
+        const queryCollection = route ? 
+            query(collection(dataBase, "items"), where("ruta", "==", route))
             :
             query(collection(dataBase, "items"))
         getDocs(queryCollection)
             .then(resp => setProducts( resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
             .catch(err => console.log(err))
             .finally(()=> setLoading(false))
-    }, [ruta])     
+    }, [route])     
 
     return (
         <div className="container-fluid list-container">

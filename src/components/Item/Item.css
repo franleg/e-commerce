@@ -7,47 +7,37 @@
 
 .card {
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
     transition: all 400ms ease;
     margin: 10px;
+    border: 0px;
 }
 
 .card:hover {
     transform: translateY(-0.1px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
 }
 
 .card-img {
-    max-width: 75%;
+    max-width: 70%;
 }
 
-.precio {
-    margin-bottom: 10px;
+.price {
     font-size: 17px;
     font-weight: 600;
     color: #7f7f7f;
 }
 
-.btn-detalle {
-    margin-top: 8px;
-    background-color: #212529;
-    border-color: #212529;
-    border-radius: 0px;
-    color: #9b9d97;
-}
-
-.btn-detalle:hover {
-    background-color: #9b9d97;
-    color: #212529;
-    border-color: #9b9d97;
-}
-
-.contenedor-stock {
-    margin-top: 30px;
-    margin-bottom: 0px !important;
+.stock-container {
+    margin-top: 40px;
+    margin-bottom: 10px !important;
 }
 
 h5 {
     font-size: 12px;
     color: #7f7f7f;
+}
+
+.item-hr {
+    margin-bottom: 20px;
 }

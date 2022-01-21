@@ -22,12 +22,12 @@ function App() {
             />
             <Route
               exact
-              path="/categorias/:ruta"
+              path="/categorias/:route"
               element={<ItemListContainer/>}
             />          
             <Route
               exact
-              path="/detalle/:idProducto"
+              path="/detalle/:idProduct"
               element={<ItemDetailContainer/>}
             />
             <Route

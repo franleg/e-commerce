@@ -6,21 +6,21 @@ import "./ItemDetailContainer.css"
 import { doc, getDoc, getFirestore } from "firebase/firestore"
 
 const ItemDetailContainer = () => {
-    const [producto, setProducto] = useState ({});
+    const [product, setProduct] = useState ({});
     const [loading, setLoading] = useState (true)
 
-    const {idProducto} = useParams();
+    const {idProduct} = useParams();
 
     const initial = 1;
 
    useEffect(() => {
     const dataBase = getFirestore()
-    const queryDataBase = doc(dataBase, "items", idProducto)
+    const queryDataBase = doc(dataBase, "items", idProduct)
     getDoc(queryDataBase)
-        .then(resp => setProducto( { id: resp.id, ...resp.data() } ))
+        .then(resp => setProduct( { id: resp.id, ...resp.data() } ))
         .catch((err)=> console.log (err))
         .finally(()=> setLoading(false)) 
-    }, [idProducto]) 
+    }, [idProduct]) 
 
     return (
         <div className="container-fluid item-container">
@@ -34,7 +34,7 @@ const ItemDetailContainer = () => {
                         </div>
                     </div>
                     :
-                    <ItemDetail initial={initial} stock={producto.stock} producto={producto}/>               
+                    <ItemDetail initial={initial} stock={product.stock} product={product}/>               
                 }
             </div>
         </div>

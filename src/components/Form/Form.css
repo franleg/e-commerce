@@ -3,12 +3,12 @@ form {
     margin-right: 300px;
 }
 
-.formulario-titulo{
+.title-form{
     font-weight: bold;
     color: #3f3f3f
 }
 
-.btn-confirmarCompra {
+.btn-confirmPurchase {
     margin-top: 30px;
     margin-bottom: 30px;
     background-color: #212529;
@@ -21,7 +21,7 @@ form {
     transition: all 0,6s ease;
 }
 
-.btn-confirmarCompra:hover {
+.btn-confirmPurchase:hover {
     background-color: #9b9d97;
     border: 1px solid #9b9d97;
     color: #212529;
@@ -32,7 +32,7 @@ form {
         margin-left: 60px;
         margin-right: 60px;
     }
-    .btn-confirmarCompra {
+    .btn-confirmPurchase {
         font-size: 16px;
         width: 70%;
     }

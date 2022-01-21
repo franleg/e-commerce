@@ -20,23 +20,23 @@ const Cart = () => {
                             </h1>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-xs-12 d-flex justify-content-center">
+                    <div className="row">
+                        <div className="col-lg-12 col-xs-12 d-flex justify-content-center">
                             <CartTable />
                         </div>
                     </div> 
                     <div className="row">
-                        <div className="col-lg-6 col-xs-6 btnSeguir-container">
+                        <div className="col-lg-6 col-xs-6 btnContinuePurchase-container">
                             <Link to="/">
-                                <Button className="btn-seguirComprando" variant="primary">Seguir Comprando</Button>
+                                <Button className="btn-continuePurchase" variant="primary">Seguir Comprando</Button>
                             </Link>                            
                         </div>
-                        <div className="col-lg-6 col-xs-6 btnVaciar-container">
-                            <button className="btn-vaciarCarrito" onClick={emptyCart}>Vaciar Carrito</button>
+                        <div className="col-lg-6 col-xs-6 btnEmptyCart-container">
+                            <button className="btn-emptyCart" onClick={emptyCart}>Vaciar Carrito</button>
                         </div>
                     </div>
                     <div className="row">
-                        <h2 className="titulo-total text-center">
+                        <h2 className="total-title text-center">
                             TOTAL DEL CARRITO
                         </h2>
                         <div className="col-lg-12 col-xs-12 d-flex justify-content-center">
@@ -46,17 +46,17 @@ const Cart = () => {
                     <div className="row">
                         <div className="col-lg-12 col-xs-12 text-center">
                             <Link to="/checkout">
-                                <Button className="btn-finalizarCompra">Finalizar Compra</Button>
+                                <Button className="btn-finishPurchase">Finalizar Compra</Button>
                             </Link>
                         </div>
                     </div>           
                 </div>
                 :
                 <div className="empty-cart text-center">
-                    <h2 className="texto-carrito">El carrito de compras está vacío</h2>
-                    <hr className="hr-carrito"/>
+                    <h2 className="cart-text">El carrito de compras está vacío</h2>
+                    <hr className="cart-hr"/>
                     <Link to="/">
-                            <Button className="btn-volver" variant="primary">Volver al Inicio</Button>
+                            <Button className="btn-return" variant="primary">Volver al Inicio</Button>
                     </Link>
 
                 </div>

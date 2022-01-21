@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2';
-import "./Validate.css";
+import "./validate.css";
 
 function validate(values) {
     if (values.name.length < 4){

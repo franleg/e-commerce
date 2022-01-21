@@ -62,4 +62,8 @@
     .nav-link {
         padding-right: 10px !important;
     }
+
+    .navbar-dark .navbar-toggler {
+        border: 0px !important;
+    }
 }

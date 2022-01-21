@@ -5,44 +5,42 @@ import Button from "react-bootstrap/Button";
 import { useCartContext } from "../../context/CartContext"
 import "./ItemDetail.css";
 
-const ItemDetail = ({initial, stock, producto}) => {
+const ItemDetail = ({initial, stock, product}) => {
 
     const [goCart, setGoCart] = useState(false);
 
-    const {cartList, addToCart} = useCartContext()
+    const {addToCart} = useCartContext()
 
-    const onAdd = (cantidad) => {
-        console.log(cantidad);
+    const onAdd = (quantity) => {
         setGoCart (true)
-        addToCart ({...producto, cantidad:cantidad})
+        addToCart ({...product, cantidad:quantity})
     }
-    console.log (cartList);
 
     return (
         <div className="container-fluid">
             <div className="row">
                 <div className="col-lg-6 col-xs-6">
                     <div className="detail-container img-container">
-                        <img src={producto.imagen} className="img-fluid" /> 
+                        <img src={product.imagen} className="img-fluid" alt="producto"/> 
                     </div>
                 </div>
                 <div className="col-lg-6 col-xs-6">
                     <div className="detail-container">
-                        <h1>{`${producto.marca} - ${producto.modelo}`}</h1>
+                        <h1>{`${product.marca} - ${product.modelo}`}</h1>
                         <hr/>
                         <h3>TARJETA DE CRÉDITO</h3>
-                        <h4>{`$${producto.precioTarjeta}`}</h4>
+                        <h4>{`$${product.precioTarjeta}`}</h4>
                         <h3>TRANSFERENCIA BANCARIA</h3>
-                        <h4 className="precio-efectivo">{`$${producto.precioEfectivo}`}</h4>
-                        <h2>{`${producto.categoria}`}</h2>
-                        <p className="description-container">{`${producto.descripcion}`}</p>
+                        <h4 className="cash-price">{`$${product.precioEfectivo}`}</h4>
+                        <h2>{`${product.categoria}`}</h2>
+                        <p className="description-container">{`${product.descripcion}`}</p>
                         {!goCart ? 
                             <ItemCount initial={initial} stock={stock} onAdd={onAdd}/>
                             :
                             <>
-                                <Link to="/carrito"><Button className="btn-agregarCarrito" variant="primary">Ir al carrito</Button></Link>
+                                <Link to="/carrito"><Button className="btn-addToCart" variant="primary">Ir al carrito</Button></Link>
                                 <br/>
-                                <Link to="/"><Button className="btn-agregarCarrito" variant="primary">Volver al inicio</Button></Link>
+                                <Link to="/"><Button className="btn-addToCart" variant="primary">Volver al inicio</Button></Link>
                             </>
                         }
                     </div>

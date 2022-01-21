@@ -8,7 +8,7 @@ import Form from "../Form/Form"
 import "./Checkout.css";
 
 function Checkout() { 
-    const {cartList, totalCompra, vaciarCarrito} = useCartContext();
+    const {cartList, totalPurchase, emptyCart} = useCartContext();
 
     const [values, setValues] = useState({
         name: "",
@@ -40,7 +40,7 @@ function Checkout() {
 
                 return ({id, marca, modelo, precio})
             }),
-            total: totalCompra(),
+            total: totalPurchase(),
             date: Timestamp.fromDate(new Date())
         }
 
@@ -78,7 +78,7 @@ function Checkout() {
                         text: `Su número de orden es ${res.id}`,
                         confirmButtonColor: "#212529"
                     })
-                    vaciarCarrito()
+                    emptyCart()
                 })
         } else {
             Swal.fire({
@@ -98,13 +98,13 @@ function Checkout() {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-lg-12 col-xs-12">
-                            <h2 className="texto-resumen">Resumen de Compra</h2>
-                            <hr className="hr-resumen" />                      
+                            <h2 className="summary-text">Resumen de Compra</h2>
+                            <hr className="summary-hr" />                      
                         </div>  
                     </div>
                     <div className="row">
                         <div className="col-lg-12 col-xs-12 form-container">
-                            <Form handleSubmit={handleSubmit} handleInputChange={handleInputChange} values={values.name, values.lastName, values.phone, values.email, values.emailConfirm}/>
+                            <Form handleSubmit={handleSubmit} handleInputChange={handleInputChange} values={values}/>
                         </div>
                     </div>
                 </div>

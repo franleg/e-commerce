@@ -7,13 +7,13 @@ const ItemCount = ( {initial, stock, onAdd} ) => {
 
     return (
         <div>
-            <h1 className="contador">Cantidad</h1>
-            <div class="contenedor-cantidad d-flex justify-content-center align-items-center">
-                <div class="contenedor-restar" onClick={decrement}>-</div>
-                <div class="cantidad">{counter}</div>
-                <div class="contenedor-sumar" onClick={increment}>+</div>
+            <h1 className="counter">Cantidad</h1>
+            <div className="quantity-container d-flex justify-content-center align-items-center">
+                <div className="subtract-container" onClick={decrement}>-</div>
+                <div className="quantity">{counter}</div>
+                <div className="add-container" onClick={increment}>+</div>
             </div>
-            <Button className="btn-agregarCarrito" variant="primary" onClick={()=> onAdd(counter)}>Agregar al carrito</Button>
+            <Button className="btn-addToCart" variant="primary" onClick={()=> onAdd(counter)}>Agregar al carrito</Button>
         </div>
     )
 }

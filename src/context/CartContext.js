@@ -10,7 +10,7 @@ function CartContextProvider({children}) {
     function addToCart(item) {
         let index = cartList.findIndex(i => i.id === item.id);
         if (index > -1){
-            const oldItem = cartList [index].cantidad
+            const oldItem = cartList[index].cantidad
             cartList.splice(index, 1)
             setCartList ([...cartList, {...item, cantidad: item.cantidad + oldItem}])
         }else{
