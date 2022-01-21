@@ -22,6 +22,8 @@ Librerías:
 | React Router Dom | 6.0.2 | Agrega enrutado a nuestra aplicación. |
 | React Font Awesome | 0.1.16 | Permite la utilización de íconos. |
 | Sweet Alert 2 | 11.3.3 | Nos ayuda a mostrar alertas y diálogos de confirmación con estilo. |
+| Formik | 2.2.9 | Optimiza la utilización de formularios. |
+| Yup | 0.32.11 | Nos brinda el uso de validaciones en formularios. |
 
 ## Instalación React Js
 
