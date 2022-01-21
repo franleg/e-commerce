@@ -19,7 +19,12 @@
 }
 
 .card-img {
-    max-width: 70%;
+    padding-top: 20px;
+    max-width: 80%;
+}
+
+.card-title {
+    padding-top: 20px;
 }
 
 .price {
